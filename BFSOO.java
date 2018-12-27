@@ -121,12 +121,14 @@ public class BFSOO extends Graph.GraphAlgorithm<BFSOO.BFSVertex> {
 	}
 
 	public static void main(String[] args) throws Exception {
-		String string = "7 8   1 2 2   1 3 3   2 4 5   3 4 4   4 5 1   5 1 -7   6 7 -1   7 6 -1 1";
+		String string = "7 8   1 2 2   1 3 3   2 4 5   3 4 4   4 5 1   5 1 -7   6 7 -1   7 6 -1   1";
 		Scanner in;
+		
 		// If there is a command line argument, use it as file from which
 		// input is read, otherwise use input from string.
 		in = args.length > 0 ? new Scanner(new File(args[0])) : new Scanner(string);
 		// Read graph from input
+		
 		Graph g = Graph.readDirectedGraph(in);
 		int s = in.nextInt();
 
@@ -146,25 +148,27 @@ public class BFSOO extends Graph.GraphAlgorithm<BFSOO.BFSVertex> {
 	}
 }
 
-/* Sample run:
-______________________________________________
-Graph: n: 7, m: 8, directed: true, Edge weights: false
-1 :  (1,2) (1,3)
-2 :  (2,4)
-3 :  (3,4)
-4 :  (4,5)
-5 :  (5,1)
-6 :  (6,7)
-7 :  (7,6)
-______________________________________________
-Output of BFS:
-Node	Dist	Parent
-----------------------
-1	0	null
-2	1	1
-3	1	1
-4	2	2
-5	3	4
-6	Inf	--
-7	Inf	--
-*/
+/**
+ *  Sample run: 
+ *  ______________________________________________ 
+ *  Graph: n: 7, m: 8, directed: true, Edge weights: false 
+ *  1 :  (1,2) (1,3) 
+ *  2 :  (2,4) 
+ *  3 :  (3,4) 
+ *  4 :  (4,5) 
+ *  5 :  (5,1) 
+ *  6 :  (6,7) 
+ *  7 :  (7,6) 
+ *  ______________________________________________ 
+ *  Output of BFS: 
+ *  Node	Dist	Parent 
+ *  ---------------------- 
+ *  1	0	null 
+ *  2	1	1 
+ *  3	1	1 
+ *  4	2	2 
+ *  5	3	4 
+ *  6	Inf	-- 
+ *  7	Inf	-- 
+ *
+ */
