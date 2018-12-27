@@ -14,7 +14,6 @@ package rbk;
  * Do not modify this file.
  */
 
-import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
@@ -388,12 +387,13 @@ public class Graph implements Iterable<Graph.Vertex> {
 	
 	/** Method to print a graph */
 	public void printGraph(boolean hasEdgeWeights) {
-		System.out.println("______________________________________________");
+		System.out.println("____________________________________________________________");
 		System.out.println("Graph: n: " + size() + ", m: " + edgeSize() + 
 			", directed: " + directed + ", Edge weights: " + hasEdgeWeights);
 		
 		for (Vertex u : this) {
 			System.out.print(u + " : ");
+						
 			for (Edge e : incident(u)) {
 				if (hasEdgeWeights) {
 					System.out.print(" " + e + "[" + e.weight + "]");
@@ -403,7 +403,7 @@ public class Graph implements Iterable<Graph.Vertex> {
 			}
 			System.out.println();
 		}
-		System.out.println("______________________________________________");
+		System.out.println("____________________________________________________________");
 	}
 	
 	/** Read a directed graph using the Scanner interface */
